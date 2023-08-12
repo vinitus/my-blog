@@ -1,29 +1,28 @@
 import Image from 'next/image';
 import blogLogo from '@/public/blog-logo.png';
 import navbarCss from '@/app/navbar.module.css';
-import { Suspense } from 'react';
 import Link from 'next/link';
+import { use } from 'react';
+import Button from './Button';
 
-async function Data() {
-  const res = await fetch('https://dcb7a8e3-965b-4d6a-8a40-ff96b332a2fc.mock.pstmn.io/hi');
+async function Data2() {
+  const res = await fetch('https://dcb7a8e3-965b-4d6a-8a40-ff96b332a2fc.mock.pstmn.io/hello');
 
   const jsonData = await res.json();
 
   const { a } = jsonData;
 
-  return <div>{a}</div>;
+  return a;
 }
 
-export default function Home() {
+export default function Second() {
   return (
     <>
-      <Suspense fallback={<div>loading...</div>}>
-        <Data />
-      </Suspense>
+      <Button />
       <header className={navbarCss.navbarHeader}>
         <nav className={navbarCss.navbarLayout}>
           <div className={navbarCss.navbarCategoryArea}>
-            <Link href='/'>
+            <Link href='/firstdir/seconddir'>
               <Image src={blogLogo} alt='블로그 로고' />
             </Link>
             <p>Home</p>

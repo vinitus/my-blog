@@ -4,7 +4,7 @@ import navbarCss from '@/app/navbar.module.css';
 import { Suspense } from 'react';
 import Link from 'next/link';
 
-async function Data() {
+async function Data1() {
   const res = await fetch('https://dcb7a8e3-965b-4d6a-8a40-ff96b332a2fc.mock.pstmn.io/hi');
 
   const jsonData = await res.json();
@@ -14,16 +14,16 @@ async function Data() {
   return <div>{a}</div>;
 }
 
-export default function Home() {
+export default function First() {
   return (
     <>
       <Suspense fallback={<div>loading...</div>}>
-        <Data />
+        <Data1 />
       </Suspense>
       <header className={navbarCss.navbarHeader}>
         <nav className={navbarCss.navbarLayout}>
           <div className={navbarCss.navbarCategoryArea}>
-            <Link href='/hi'>
+            <Link href='/firstdir'>
               <Image src={blogLogo} alt='블로그 로고' />
             </Link>
             <p>Home</p>
