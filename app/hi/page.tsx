@@ -23,7 +23,7 @@ export default function Home() {
       <header className={navbarCss.navbarHeader}>
         <nav className={navbarCss.navbarLayout}>
           <div className={navbarCss.navbarCategoryArea}>
-            <Link href='/hi'>
+            <Link href='/'>
               <Image src={blogLogo} alt='블로그 로고' />
             </Link>
             <p>Home</p>
