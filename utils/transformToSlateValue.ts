@@ -5,6 +5,12 @@ export default function transformToSlateValue(str: string): Descendant[] {
   const splitedStr = str.split('\n');
   console.log(splitedStr.length);
   const descendantArray: Descendant[] = splitedStr.map((line) => {
+    // if (line === '\r') {
+    //   return {
+    //     // children: [{ text: '\n\r' }],
+    //     children: [{ text: '' }],
+    //   };
+    // }
     return {
       children: [{ text: line.trim() }],
     };
